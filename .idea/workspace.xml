@@ -34,7 +34,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608300976934</updated>
       <workItem from="1608300978019" duration="3227000" />
-      <workItem from="1608550856438" duration="9935000" />
+      <workItem from="1608550856438" duration="15078000" />
     </task>
     <servers />
   </component>
@@ -46,5 +46,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1608555765372" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1608660986099">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1608660986099" />
   </component>
 </project>

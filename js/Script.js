@@ -69,24 +69,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateClock();
 
+        function getZero (num) {
+            if (num >= 0 && num < 10) {
+                return `0${num}`
+            }
+            else {
+                return num
+            }
+        }
+
         function updateClock () {
             const restOfTime = getTimeRemaining(endTime);
 
-            daysCounter.innerHTML = '' + restOfTime.daysCounter;
-            hoursCounter.innerHTML = '' + restOfTime.hoursCounter;
-            minutesCounter.innerHTML = '' + restOfTime.minutesCounter;
-            secondsCounter.innerHTML = '' + restOfTime.secondsCounter;
+            daysCounter.innerHTML = getZero(restOfTime.daysCounter);
+            hoursCounter.innerHTML = getZero(restOfTime.hoursCounter);
+            minutesCounter.innerHTML = getZero(restOfTime.minutesCounter);
+            secondsCounter.innerHTML = getZero(restOfTime.secondsCounter);
 
             if (restOfTime.total <= 0) {
                 clearInterval(timer);
             }
-
-            // if () {
-            //
-            // }
         }
     }
 
     setClock(deadline);
+
+        //modal
+
+    const modalTrigger = document.querySelectorAll('[data-modal]');
+    const modal = document.querySelector('.modal');
+    const modalCloseBtn = document.querySelector('.modal__close')
+
+    modalTrigger.forEach(btn => {
+        btn.addEventListener('click', openModal)
+    })
+
+    function openModal () {
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden';
+        clearTimeout(modalInterval)
+    }
+
+    function closeModal () {
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal)
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal()
+        }
+    })
+
+    document.addEventListener('keydown', (event) => {
+        if (event.code === 'Escape' && modal.classList.contains('show')) {
+            closeModal()
+        }
+    })
+
+    const modalInterval = setTimeout(openModal, 5000);
+
+    function showModalByScroll () {
+        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+            openModal();
+            removeEventListener('scroll', showModalByScroll)
+        }
+    }
+
+    window.addEventListener('scroll', showModalByScroll);
 
 })
