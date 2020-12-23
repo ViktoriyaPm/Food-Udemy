@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const daysCounter = Math.floor(parseRestOfTime / (1000 * 60 * 60 * 24 ));
         const hoursCounter = Math.floor((parseRestOfTime / (1000 * 60 * 60)) % 24);
         const minutesCounter = Math.floor((parseRestOfTime / (1000 * 60)) % 60);
-        const secondsCounter = Math.floor((parseRestOfTime / 1000) % 60)
+        const secondsCounter = Math.floor((parseRestOfTime / 1000) % 60);
 
         return {
             total: parseRestOfTime,
@@ -98,17 +98,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modalTrigger = document.querySelectorAll('[data-modal]');
     const modal = document.querySelector('.modal');
-    const modalCloseBtn = document.querySelector('.modal__close')
+    const modalCloseBtn = document.querySelector('.modal__close');
 
     modalTrigger.forEach(btn => {
-        btn.addEventListener('click', openModal)
+        btn.addEventListener('click', openModal);
     })
 
     function openModal () {
         modal.classList.add('show');
         modal.classList.remove('hide');
         document.body.style.overflow = 'hidden';
-        clearTimeout(modalInterval)
+        clearTimeout(modalTimeout);
     }
 
     function closeModal () {
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
-    modalCloseBtn.addEventListener('click', closeModal)
+    modalCloseBtn.addEventListener('click', closeModal);
 
     modal.addEventListener('click', (event) => {
         if (event.target === modal) {
@@ -127,19 +127,89 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', (event) => {
         if (event.code === 'Escape' && modal.classList.contains('show')) {
-            closeModal()
+            event.preventDefault();
+            closeModal();
         }
-    })
+    });
 
-    const modalInterval = setTimeout(openModal, 5000);
+    const modalTimeout = setTimeout(openModal, 7000);
 
     function showModalByScroll () {
-        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+        console.log(modalTimeout);
+        debugger;
+        if ((window.pageYOffset + document.documentElement.clientHeight) >= document.documentElement.scrollHeight) {
             openModal();
-            removeEventListener('scroll', showModalByScroll)
+            removeEventListener('scroll', showModalByScroll);
         }
     }
 
     window.addEventListener('scroll', showModalByScroll);
+
+
+    //Введению в работу с классами на примере создания на странице карточек меню
+
+    class MenuCard {
+        constructor(src, alt, title, descr, price, parentSelector) {
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.price = price;
+            this.parent = document.querySelector(parentSelector);
+        }
+
+        render() {
+            const element = document.createElement('div');
+            element.innerHTML = `
+                <div class="menu__item">
+                        <img src= ${this.src} alt=${this.alt}>
+                        <h3 class="menu__item-subtitle">${this.title}</h3>
+                        <div class="menu__item-descr">${this.descr}</div>
+                        <div class="menu__item-divider"></div>
+                        <div class="menu__item-price">
+                            <div class="menu__item-cost">Цена:</div>
+                            <div class="menu__item-total"><span>${this.price}</span> руб/день</div>
+                        </div>
+                    </div>
+            `;
+            this.parent.append(element);
+        }
+    }
+
+    new MenuCard(
+        "img/tabs/vegy.jpg",
+        "vegy",
+        'Меню "Фитнес"',
+        'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
+        550,
+        '.menu .container'
+    ).render();
+
+    new MenuCard(
+        "img/tabs/elite.jpg",
+        "elite",
+        'Меню “Премиум”',
+        'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
+        700,
+        '.menu .container'
+    ).render();
+
+    new MenuCard(
+        "img/tabs/post.jpg",
+        "post",
+        'Меню "Постное"',
+        'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
+        500,
+        '.menu .container'
+    ).render();
+
+    new MenuCard(
+        "img/tabs/balance.jpg",
+        "balance",
+        'Меню "Сбалансированное"',
+        'Меню "Сбалансированное" - это соответствие вашего рациона всем научным рекомендациям. Мы тщательно просчитываем вашу потребность в к/б/ж/у и создаем лучшие блюда для вас.',
+        650,
+        '.menu .container'
+    ).render();
 
 })
