@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2895d993-13d2-4e3b-b3b3-aa3da9e1cb55" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/Group 5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/Group 5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/facebook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/facebook.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/instagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/instagram.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/left.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/left.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/right.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/right.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/switch.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/switch.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/veg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/veg.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +48,7 @@
       <updated>1608300976934</updated>
       <workItem from="1608300978019" duration="3227000" />
       <workItem from="1608550856438" duration="22677000" />
-      <workItem from="1610354238253" duration="9209000" />
+      <workItem from="1610354238253" duration="13317000" />
     </task>
     <servers />
   </component>
@@ -74,9 +64,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="421" y="39" width="597" height="822" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1610375903996" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1608660986099">
+    <state x="481" y="121" width="670" height="676" key="search.everywhere.popup" timestamp="1610702785259">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1608660986099" />
+    <state x="481" y="121" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1610702785259" />
   </component>
 </project>
